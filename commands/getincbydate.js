@@ -1,7 +1,7 @@
 const db = require('./../db/index');
 
 module.exports = {
-	name: 'getincbydate',
+	name: 'inchistory',
 	description: 'Gets a list of systems under incursion on a specified date',
     format: 'YYYY-MM-DD',
 	permlvl: 1,
