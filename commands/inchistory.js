@@ -9,8 +9,11 @@ module.exports = {
 	execute(message, args) {
 		try {
 			db.getIncursionsByDate(args[0]).then((res) => {
+				if (res.length == 0) {
+					return message.channel.send(`No Incursions Found on ${args[0]}`);
+				}
 			  	for (let i = 0; i < res.length; i++) {
-				message.channel.send(`${res[i]}`);
+				return message.channel.send(`${res[i]}`);
 			    }
 			})
 		} catch {
